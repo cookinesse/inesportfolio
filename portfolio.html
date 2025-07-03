@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ines Cooki | UI/UX Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #d0bcff;
+      --accent: #8266ff;
+      --bg: #f9f9fc;
+      --text: #2e2e48;
+      --card: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background: var(--bg) url('https://www.transparenttextures.com/patterns/cubes.png');
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Floating decoration circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(210, 180, 255, 0.15);
+      z-index: 0;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .circle.one { width: 100px; height: 100px; top: 100px; left: 30px; }
+    .circle.two { width: 80px; height: 80px; bottom: 120px; right: 40px; animation-delay: 2s; }
+    .circle.three { width: 120px; height: 120px; top: 400px; right: 100px; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(145deg, #f4f4ff, #eae8ff);
+      animation: fadeIn 1.5s ease forwards;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      color: var(--text);
+      margin-bottom: 15px;
+    }
+
+    .contact-icons {
+      margin-top: 10px;
+    }
+
+    .contact-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      color: #5f4bff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin-top: 8px;
+      border-radius: 4px;
+    }
+
+    section h2:hover {
+      transform: translateX(5px);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .project {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .project h3 {
+      color: var(--accent);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .hashtags {
+      margin-top: 12px;
+      font-family: monospace;
+      color: var(--primary);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 50px;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+      .project {
+        padding: 20px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorative floating shapes -->
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+  <div class="circle three"></div>
+
+  <header>
+    <h1>Ines Cooki</h1>
+    <p>UI/UX Designer & Front-end Enthusiast</p>
+    <div class="contact-icons">
+      <a href="mailto:inesqueen325@gmail.com">Email</a>
+      <a href="https://www.behance.net/inesdeer">Behance</a>
+      <a href="https://www.linkedin.com/in/cookie-ines-1bab93356/" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Hello</h2>
+    <p>I’m a creative and passionate UI/UX designer who thrives on turning challenges into delightful experiences. My design focus lies in creating clean, user-friendly interfaces backed by thoughtful research and strategy.</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p><strong>Higher School of Education Asia Djebar</strong><br>English Major (2023 - Present)</p>
+    <p>Check out my resume: <a href="c:\Users\ines\Downloads\Cooki Ines Professional CV Resume.pdf">[PDF Link]</a></p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Figma – wireframing, prototyping</li>
+      <li>User Research & Persona Building</li>
+      <li>Information Architecture</li>
+      <li>Design Systems & Accessibility</li>
+      <li>HTML / CSS Basics</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <a class="project" href="https://www.behance.net/gallery/228370125/Artika-Skin-care" target="_blank">
+        <h3>Artika Skin Care</h3>
+        <p>Brand identity and UI for a skincare brand with soft color palette and elegant structure.</p>
+        <p class="hashtags">#UI #Skincare #Behance</p>
+      </a>
+      <a class="project" href="https://www.behance.net/gallery/228159351/NICE-ICE-Coffee-Shop" target="_blank">
+        <h3>NICE ICE Coffee Shop</h3>
+        <p>Minimal, cozy app design for a trendy café with custom illustrations and warm UX.</p>
+        <p class="hashtags">#UXDesign #Cafe #MobileUI</p>
+      </a>
+      <a class="project" href="https://www.behance.net/gallery/227671953/Cookinesse-Stores-Finder" target="_blank">
+        <h3>Cookinesse Stores Finder</h3>
+        <p>Store locator app for fashion lovers—complete with filters, maps, and clean navigation.</p>
+        <p class="hashtags">#FashionApp #Locator #Figma</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fun Facts</h2>
+    <ul>
+      <li>☕ Addicted to café vibes while designing.</li>
+      <li>🎧 Lo-fi beats fuel my creative flow.</li>
+      <li>✈️ Designing someday from Tokyo? Manifesting it!</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    &copy; <span id="year"></span> Ines Cooki. All rights reserved.
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
